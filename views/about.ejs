@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - <%= shopData.shopName %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>About <%= shopData.shopName %> Shop</h1>
+        <p>We sell all sorts of drinks to satisfy your thirst!</p>
+        
+        <h2>Our Shop Locations</h2>
+        <div class="shops-list">
+            <% shopData.shops.forEach(shop => { %>
+                <div class="shop-item" style="background: #f8f9fa; padding: 1rem; margin: 1rem 0; border-radius: 5px; border-left: 4px solid #4a7c59;">
+                    <h3>Shop #<%= shop.id %></h3>
+                    <p><strong>Manager:</strong> <%= shop.manager %></p>
+                    <p><strong>Address:</strong> <%= shop.address %></p>
+                    <p><strong>Phone:</strong> <%= shop.phone %></p>
+                </div>
+            <% }); %>
+        </div>
+        
+        <h2>Our Mission</h2>
+        <p>At <%= shopData.shopName %>, we're committed to providing students with affordable, high-quality beverages in convenient campus locations.</p>
+        
+        <nav>
+            <a href="/">Home</a> | 
+            <a href="/about">About</a> | 
+            <a href="/search">Search</a> | 
+            <a href="/register">Register</a> |
+            <a href="/survey">Survey</a>
+        </nav>
+    </div>
+</body>
+</html>

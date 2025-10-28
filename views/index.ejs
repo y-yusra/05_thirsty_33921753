@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to <%= shopData.shopName %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to <%= shopData.shopName %> Shop</h1>
+        <h2>Here are some things that we sell:</h2>
+        <ul>
+            <% for(let i = 0; i < shopData.productCategories.length; i++) { %>
+                <li><%= shopData.productCategories[i] %></li>
+            <% } %>
+        </ul>
+        
+        <nav>
+            <a href="/">Home</a> | 
+            <a href="/about">About</a> | 
+            <a href="/search">Search</a> | 
+            <a href="/register">Register</a> |
+            <a href="/survey">Survey</a>
+        </nav>
+    </div>
+</body>
+</html>

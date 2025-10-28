@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Survey - <%= shopData.shopName %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Survey</h1>
+        <p>Help us improve our services by completing this short survey</p>
+        
+        <form method="POST" action="/survey-submit" class="survey-form">
+            <fieldset class="form-group">
+                <legend>Personal Information</legend>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="surname">Surname *</label>
+                        <input type="text" id="surname" name="surname" required class="form-control">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control">
+                </div>
+            </fieldset>
+            
+            <fieldset class="form-group">
+                <legend>Survey Questions</legend>
+                
+                <div class="form-group">
+                    <label for="age">How old are you? *</label>
+                    <input type="number" id="age" name="age" min="1" max="120" required class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label>Which of the following drinks categories do you consume? *</label>
+                    <div class="radio-group">
+                        <% shopData.productCategories.forEach(category => { %>
+                            <label class="radio-label">
+                                <input type="radio" name="drinkCategory" value="<%= category %>" required>
+                                <%= category %>
+                            </label>
+                        <% }); %>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="isStudent" value="true">
+                        Are you a student?
+                    </label>
+                </div>
+            </fieldset>
+            
+            <input type="submit" value="Submit Survey" class="btn-primary">
+        </form>
+        
+        <nav>
+            <a href="/">Home</a> | 
+            <a href="/about">About</a> | 
+            <a href="/search">Search</a> | 
+            <a href="/register">Register</a> |
+            <a href="/survey">Survey</a>
+        </nav>
+    </div>
+</body>
+</html>
