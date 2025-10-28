@@ -53,7 +53,7 @@ npm run forever
 
 ### 4. Access the Application
 Open your web browser and navigate to:
-http://localhost:8000
+http://www.doc.gold.ac.uk/usr/300/
 
 
 ### Usage Guide
